@@ -1,0 +1,27 @@
+version: '2'
+services:
+  android-S8:
+    image: 'budtmo/docker-android-x86-8.1:latest'
+    stdin_open: true
+    tty: true
+    ports:
+      - '5557:5554'
+      - '5556:5555'
+      - '6081:6080'
+    networks:
+      network_0:
+        ipv4_address: 172.16.238.12
+    environment:
+      - DEVICE=Samsung Galaxy S8
+  kali:
+    image: 'kuntu95/kaliexploitandroid:latest'
+    stdin_open: true
+    tty: true
+    networks:
+      network_0:
+        ipv4_address: 172.16.238.10
+networks:
+  network_0:
+    ipam:
+      config:
+        - subnet: 172.16.238.1/24
