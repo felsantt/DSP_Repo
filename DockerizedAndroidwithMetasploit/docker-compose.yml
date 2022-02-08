@@ -4,6 +4,7 @@ services:
     image: 'budtmo/docker-android-x86-8.1:latest'
     stdin_open: true
     tty: true
+    privileged: true
     ports:
       - '5557:5554'
       - '5556:5555'
